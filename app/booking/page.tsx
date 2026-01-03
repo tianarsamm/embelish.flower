@@ -3,8 +3,15 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+interface Product {
+  name: string;
+  image: string;
+  price: number;
+  description: string;
+}
+
 export default function Booking() {
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState<Product | null>(null);
   const router = useRouter();
 
   useEffect(() => {
