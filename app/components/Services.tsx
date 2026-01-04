@@ -3,6 +3,14 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  description: string;
+}
+
 export default function ServicesAndContact() {
   const [sortOrder, setSortOrder] = useState('default');
   const [sortDirection, setSortDirection] = useState('asc');
@@ -19,7 +27,7 @@ export default function ServicesAndContact() {
     { id: 6, name: 'Vas Bunga', price: 20000, image: '/dummyimage/12.png', description: 'Bunga dalam vas yang elegan, sempurna untuk dekorasi rumah atau kantor Anda.' },
   ];
 
-  const handleProductClick = (product) => {
+  const handleProductClick = (product: Product) => {
     // Simpan data produk ke sessionStorage untuk diakses di halaman booking
     sessionStorage.setItem('selectedProduct', JSON.stringify(product));
     // Navigate ke halaman booking
