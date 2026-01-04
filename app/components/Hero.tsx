@@ -11,8 +11,8 @@ export default function HomePage() {
 const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
   e.preventDefault();
 
-  const targetId = e.target.getAttribute("href").replace("#", "");
-  const targetElement = document.getElementById(targetId);
+  const targetId = (e.target as HTMLAnchorElement).getAttribute("href")?.replace("#", "");
+  const targetElement = document.getElementById(targetId || "");
 
   if (targetElement) {
     targetElement.scrollIntoView({
