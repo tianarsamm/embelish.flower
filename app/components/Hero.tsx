@@ -8,7 +8,7 @@ export default function HomePage() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-const handleSmoothScroll = (e) => {
+const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
   e.preventDefault();
 
   const targetId = e.target.getAttribute("href").replace("#", "");
